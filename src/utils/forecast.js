@@ -8,7 +8,6 @@ const forecast = (latitude, longitude, callback) =>{
         } else if (body.error) {
             callback('Error in user parameters', undefined)
         } else {
-            console.log(body.current)
             callback(undefined,{
                 weather: body.current.weather_descriptions[0],
                 temp: body.current.temperature,
