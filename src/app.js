@@ -53,11 +53,11 @@ app.get('/weather', (req,res)=>{
         if (error){
             return res.send({error})
         }
-        forecast(Latitude,Longitude, (error, {weather,temp,feelslike} = {}) => {
+        forecast(Latitude,Longitude, (error, {weather,temp,feelslike,humidity} = {}) => {
             if (error) {
                 return res.send({error})
             }
-            const forecast = weather + ' - Temperature is ' + temp + ', it feels like ' + feelslike
+            const forecast = weather + ' - Temperature is ' + temp + ', it feels like ' + feelslike + '. The humidity is ' + humidity
             res.send({
                 temp,
                 place: Location,
